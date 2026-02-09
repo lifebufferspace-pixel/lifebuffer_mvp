@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一段以聲音陪你畫畫的安靜時段</title>
+    <style>
+        /* 全域變數 - 提升色彩的層次感 */
+        :root {
+            --bg-base: #FDFCFB;
+            --text-dark: #0F172A;
+            --text-soft: #475569;
+            --accent: #94A3B8;
+            --accent-warm: #E2D1C3;
+            --accent-cool: #C9D6EA;
+            --font-main: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+	    --border: rgba(15, 23, 42, 0.15);
+
+        }
+
+        /* 動態進場動畫 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-dark);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        /* 藝術感背景色塊 */
+        .bg-blobs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+
+        .blob-1 { top: -10%; right: -10%; width: 400px; height: 400px; background: var(--accent-warm); }
+        .blob-2 { bottom: 10%; left: -5%; width: 350px; height: 350px; background: var(--accent-cool); }
+        .blob-3 { top: 40%; right: 15%; width: 300px; height: 300px; background: #F1F5F1; }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 16px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* 主視覺圖片 */
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px; 
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            display: block;
+        }
+
+        header {
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subtitle::before {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        /* 區段設計 - 玻璃質感 */
+        section {
+            margin-bottom: 24px;
+            padding: 30px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        p {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-text {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .quote-box {
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.4);
+            border-left: 6px solid var(--accent-warm);
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h3 svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--text-dark);
+            stroke-width: 2.5;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        li::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .highlight-box {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--border);
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        blockquote {
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+            margin: 40px 0;
+            color: var(--text-soft);
+            position: relative;
+        }
+
+        blockquote::after {
+            content: "“";
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 8rem;
+            opacity: 0.05;
+        }
+
+        .usage-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .step-tag {
+            background: var(--text-dark);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* 價格區塊 - 藝術強化 */
+        .cta-section {
+            text-align: center;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+            border-radius: 30px;
+            margin-top: 50px;
+            border: 2px solid white;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+        }
+
+        .price-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .price-label {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background: var(--text-dark);
+            color: white;
+            padding: 22px 70px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .buy-button:hover {
+            transform: scale(1.05) rotate(-1deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .final-quote {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-align: center;
+            margin-top: 50px;
+            background: linear-gradient(to right, #000, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            margin-top: 40px;
+        }
+
+        .footer-brand { font-size: 1.2rem; font-weight: 900; margin-bottom: 10px; }
+        .contact-info a { color: var(--text-dark); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--accent-warm); }
+
+        /* PDF 優化 */
+        @media print {
+            .bg-blobs { display: none; }
+            section { background: white !important; border: 1px solid #eee; backdrop-filter: none; }
+            .buy-button { display: none; }
+            body { font-size: 12pt; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- 背景藝術色塊 -->
+<div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+</div>
+
+<div class="container">
+    <!-- 主視覺圖片 -->
+    <img src="lifebuffer_landing?text=LifeBuffer+Space+Artistic+Experience" alt="療癒畫畫音檔" class="hero-image">
+
+    <header>
+        <h1>給最近很累、<br>但又不想跟任何人說話的你</h1>
+        <div class="subtitle">一段以聲音陪你畫畫的安靜時段</div>
+    </header>
+
+    <section>
+        <div class="intro-text">不用上課 ‧ 不用分享 ‧ 不用畫得好</div>
+        <div class="quote-box">
+            <p>你可能不是心情不好，</p>
+            <p>只是最近的生活，沒有留下什麼空間給你自己。</p>
+            <p>不是想解決什麼問題，也不是需要別人給建議，</p>
+            <p>只是想要一段不用應付、也不用解釋的時間。</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+            不需要你做的事
+        </h3>
+        <ul>
+            <li>說出你的感受</li>
+            <li>跟任何人互動</li>
+            <li>理解畫畫技巧</li>
+            <li>想清楚要畫什麼</li>
+        </ul>
+        <div class="highlight-box">
+            你只需要準備紙和筆，然後，跟著聲音慢慢走。
+        </div>
+    </section>
+
+    <section>
+        <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            那你會經歷什麼？
+        </h3>
+        <p>這是一段以聲音為主的陪伴流程。聲音會在不同時刻提醒你：</p>
+        <ul style="margin-top: 15px;">
+            <li>什麼時候可以開始</li>
+            <li>什麼時候可以停一下看看</li>
+            <li>什麼時候可以繼續</li>
+            <li>什麼時候可以慢慢收尾</li>
+        </ul>
+    </section>
+
+    <blockquote>
+        「你在裡面，自己走；<br>有人在旁邊，陪著。」
+    </blockquote>
+
+    <section>
+        <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><circle cx="12" cy="12" r="2"></circle></svg>
+            為什麼是用聲音？
+        </h3>
+        <p>因為有時候，你只是想要：不被看見、不被要求回應、不需要打開鏡頭，但也不想完全一個人。</p>
+        <p>聲音，剛好留下一個空間。</p>
+    </section>
+
+    <section>
+        <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            特別適合你，如果你：
+        </h3>
+        <ul>
+            <li>想畫畫，但常常畫沒多久就停</li>
+            <li>想靜一下，卻很難真的靜下來</li>
+            <li>不想被教，也不想被分析</li>
+            <li>只希望有一小段時間，是留給自己的</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+            使用方式
+        </h3>
+        <div class="usage-steps">
+            <div class="step-tag">15 分鐘陪伴</div>
+            <div class="step-tag">安靜空間</div>
+            <div class="step-tag">戴上耳機</div>
+            <div class="step-tag">準備紙筆</div>
+            <div class="step-tag">按下播放</div>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <div class="price-wrapper">
+            <span style="font-size: 1.8rem; vertical-align: super; font-weight: 900;">NT$</span>
+            <span class="price-label">299</span>
+        </div>
+       <a class="buy-button" href="你的表單或連結" target="_blank" rel="noopener">
+  取得這段陪伴時間
+</a>
+
+        <p style="margin-top: 20px; font-size: 1.2rem; font-weight: 800;">一次取得，隨時可以回來</p>
+    </div>
+
+    <div class="final-quote">
+        你不需要變好，只需要開始。
+    </div>
+
+    <footer>
+        <div class="footer-brand">LifeBuffer Space</div>
+        <p>為忙碌的生活留下一個緩衝的空間</p>
+        <div class="contact-info">
+            聯絡：<a href="mailto:lifebuffer.space@gmail.com">lifebuffer.space@gmail.com</a>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #94A3B8;">© 2024 LifeBuffer Space | 數位產品購買須知</p>
+    </footer>
+</div>
+
+</body>
+</html>
