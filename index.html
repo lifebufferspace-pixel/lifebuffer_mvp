@@ -1,427 +1,492 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一段以聲音陪你畫畫的安靜時段</title>
-    <style>
-        /* 全域變數 - 提升色彩的層次感 */
-        :root {
-            --bg-base: #FDFCFB;
-            --text-dark: #0F172A;
-            --text-soft: #475569;
-            --accent: #94A3B8;
-            --accent-warm: #E2D1C3;
-            --accent-cool: #C9D6EA;
-            --font-main: "Microsoft JhengHei", "微軟正黑體", sans-serif;
-	    --border: rgba(15, 23, 42, 0.15);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15 分鐘｜一段以聲音陪你畫畫的安靜時段</title>
+  <meta name="description" content="不是課程、不用分享、不教畫畫。15 分鐘，以聲音陪你把第一筆畫下去。一次取得，可重複播放。" />
+<link rel="canonical" href="https://lifebuffer-space.netlify.app/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="LifeBuffer Space" />
+<meta property="og:title" content="15 分鐘｜一段以聲音陪你畫畫的安靜時段" />
+<meta property="og:description" content="不是課程、不用分享、不教畫畫。15 分鐘，以聲音陪你把第一筆畫下去。一次取得，可重複播放。" />
+<meta property="og:url" content="https://lifebuffer-space.netlify.app/" />
+<meta property="og:image" content="https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg" />
+<meta property="og:image:alt" content="15 分鐘以聲音陪你畫畫的安靜時段" />
+/*Twitter Card*/
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="15 分鐘｜一段以聲音陪你畫畫的安靜時段" />
+<meta name="twitter:description" content="不是課程、不用分享、不教畫畫。15 分鐘，以聲音陪你把第一筆畫下去。" />
+<meta name="twitter:image" content="https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg" />
 
-        }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "15 分鐘｜一段以聲音陪你畫畫的安靜時段",
+  "description": "不是課程、不用分享、不教畫畫。15 分鐘，以聲音陪你把第一筆畫下去。一次取得，可重複播放。",
+  "image": "https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg",
+  "brand": {
+    "@type": "Brand",
+    "name": "LifeBuffer Space"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "TWD",
+    "price": "299",
+    "availability": "https://schema.org/PreOrder"
+  }
+}
+</script>
 
-        /* 動態進場動畫 */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+ <style>
+/* =========================================================
+   LifeBuffer Space Landing — readable, minimal CSS
+   Goal: keep visuals unchanged; reduce noise; group by purpose
+   ========================================================= */
 
-        body {
-            background-color: var(--bg-base);
-            color: var(--text-dark);
-            font-family: var(--font-main);
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            line-height: 1.7;
-            position: relative;
-        }
+/* ---------- Design tokens ---------- */
+:root{
+  --bg:#FDFCFB;
+  --ink:#0F172A;
+  --muted:#475569;
+  --accent:#94A3B8;
+  --warm:#E2D1C3;
+  --cool:#C9D6EA;
+  --border:rgba(15,23,42,.15);
+  --font:"Microsoft JhengHei","微軟正黑體",sans-serif;
 
-        /* 藝術感背景色塊 */
-        .bg-blobs {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
+  /* card highlight (「你會得到什麼」) */
+  --focus-bg:rgba(226,209,195,.20);
+  --focus-bd:rgba(226,209,195,.55);
+}
 
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-        }
+/* ---------- Motion ---------- */
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-        .blob-1 { top: -10%; right: -10%; width: 400px; height: 400px; background: var(--accent-warm); }
-        .blob-2 { bottom: 10%; left: -5%; width: 350px; height: 350px; background: var(--accent-cool); }
-        .blob-3 { top: 40%; right: 15%; width: 300px; height: 300px; background: #F1F5F1; }
+/* ---------- Base ---------- */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--font);
+  line-height:1.7;
+  color:var(--ink);
+  background:var(--bg);
+  overflow-x:hidden;
+  position:relative;
+}
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 16px;
-            animation: fadeIn 1s ease-out;
-        }
+/* ---------- Background blobs ---------- */
+.bg-blobs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4}
+.blob-1{top:-10%;right:-10%;width:400px;height:400px;background:var(--warm)}
+.blob-2{bottom:10%;left:-5%;width:350px;height:350px;background:var(--cool)}
+.blob-3{top:40%;right:15%;width:300px;height:300px;background:#F1F5F1}
 
-        /* 主視覺圖片 */
-        .hero-image {
-            width: 100%;
-            height: auto;
-            border-radius: 20px; 
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            display: block;
-        }
+/* ---------- Layout ---------- */
+.container{max-width:900px;margin:0 auto;padding:40px 16px;animation:fadeIn 1s ease-out}
+.hero-image{
+  width:100%;
+  height:auto;
+  display:block;
+  margin:0 0 30px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
 
-        header {
-            margin-bottom: 40px;
-            padding: 0 10px;
-        }
+/* ---------- Typography / header ---------- */
+header{margin:0 0 24px;padding:0 10px}
+h1{margin:0 0 10px;font-size:3rem;font-weight:900;line-height:1.18;letter-spacing:-.02em}
+.subtitle{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px;
+  font-size:1.35rem;font-weight:800;color:var(--accent)
+}
+.subtitle::before{content:"";width:40px;height:2px;background:var(--accent)}
 
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            line-height: 1.2;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.02em;
-        }
+/* ---------- Pills ---------- */
+.meta-row{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.pill{
+  padding:8px 14px;border-radius:999px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.6);
+  font-size:1rem;font-weight:800;color:var(--muted)
+}
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--accent);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+/* ---------- Sections / cards ---------- */
+section{
+  margin:0 0 18px;
+  padding:28px;
+  border-radius:24px;
+  background:rgba(255,255,255,.5);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 10px 30px rgba(0,0,0,.02);
+  transition:transform .3s ease, background .3s ease;
+}
+section:hover{transform:translateY(-5px);background:rgba(255,255,255,.7)}
 
-        .subtitle::before {
-            content: "";
-            display: inline-block;
-            width: 40px;
-            height: 2px;
-            background: var(--accent);
-        }
+p{margin:0 0 1rem;font-size:1.18rem;font-weight:750}
 
-        /* 區段設計 - 玻璃質感 */
-        section {
-            margin-bottom: 24px;
-            padding: 30px;
-            border-radius: 24px;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            transition: transform 0.3s ease;
-        }
+.intro-text{
+  margin:0 0 14px;
+  font-size:.95rem;font-weight:900;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent)
+}
 
-        section:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.7);
-        }
+.quote-box{
+  padding:18px;
+  border-radius:12px;
+  background:rgba(255,255,255,.4);
+  border-left:6px solid var(--warm);
+}
 
-        p {
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 1.2rem;
-        }
+.boundary-note{
+  margin-top:14px;
+  padding:14px 16px;
+  border-radius:14px;
+  background:rgba(255,255,255,.55);
+  border:1px dashed var(--border);
+  color:var(--muted);
+  font-size:1.02rem;font-weight:850;
+}
 
-        .intro-text {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
+/* ---------- Section headings ---------- */
+h3{
+  margin:0 0 18px;
+  display:flex;align-items:center;gap:12px;
+  font-size:1.9rem;font-weight:900
+}
+h3 svg{width:34px;height:34px;stroke:var(--ink);stroke-width:2.5}
 
-        .quote-box {
-            padding: 20px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.4);
-            border-left: 6px solid var(--accent-warm);
-        }
+/* ---------- Lists ---------- */
+ul{list-style:none;padding:0;margin:0}
+li{
+  margin:0 0 12px;
+  display:flex;align-items:flex-start;
+  font-size:1.18rem;font-weight:800;color:var(--ink)
+}
+li::before{
+  content:"";
+  width:8px;height:8px;
+  margin:10px 14px 0 0;
+  border-radius:50%;
+  background:var(--accent);
+  flex-shrink:0
+}
 
-        h3 {
-            font-size: 2rem;
-            font-weight: 900;
-            margin: 0 0 24px 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+.highlight-box{
+  margin-top:18px;
+  padding-top:18px;
+  border-top:2px dashed var(--border);
+  font-size:1.35rem;font-weight:950
+}
 
-        h3 svg {
-            width: 36px;
-            height: 36px;
-            stroke: var(--text-dark);
-            stroke-width: 2.5;
-        }
+/* ---------- Quote ---------- */
+blockquote{
+  margin:34px 0;
+  text-align:center;
+  font-size:1.85rem;font-weight:900;
+  color:var(--muted);
+  position:relative
+}
+blockquote::after{
+  content:"“";
+  position:absolute;top:-40px;left:50%;
+  transform:translateX(-50%);
+  font-size:8rem;opacity:.05
+}
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+/* ---------- Usage tags ---------- */
+.usage-steps{display:flex;flex-wrap:wrap;gap:10px}
+.step-tag{
+  padding:10px 18px;border-radius:50px;
+  background:var(--ink);color:#fff;
+  font-size:1.05rem;font-weight:850
+}
 
-        li {
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
+/* ---------- Two column cards ---------- */
+.two-col{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:720px){.two-col{grid-template-columns:1fr 1fr}}
 
-        li::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
+.soft-card{
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,255,255,.45);
+  border:1px solid rgba(15,23,42,.10)
+}
+.soft-card .title{margin:0 0 10px;font-size:1.1rem;font-weight:950;color:var(--ink)}
+.soft-card .desc{margin:0;font-size:1.05rem;font-weight:800;color:var(--muted)}
+.soft-card.is-focus{background:var(--focus-bg);border-color:var(--focus-bd)}
 
-        .highlight-box {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 2px dashed var(--border);
-            font-weight: 900;
-            font-size: 1.5rem;
-            color: var(--text-dark);
-        }
+/* ---------- CTA ---------- */
+.cta-section{
+  margin-top:40px;
+  padding:56px 28px;
+  text-align:center;
+  border-radius:30px;
+  border:2px solid #fff;
+  background:linear-gradient(135deg,#fff 0%,#f9f9f9 100%);
+  box-shadow:0 20px 50px rgba(0,0,0,.05)
+}
+.price-wrapper{margin-bottom:18px}
+.price-label{font-size:3.8rem;font-weight:950;letter-spacing:-.05em}
 
-        blockquote {
-            font-size: 2rem;
-            font-weight: 900;
-            text-align: center;
-            margin: 40px 0;
-            color: var(--text-soft);
-            position: relative;
-        }
+.buy-button{
+  display:inline-block;
+  padding:20px 60px;
+  border-radius:50px;
+  background:var(--ink);color:#fff;
+  font-size:1.45rem;font-weight:950;
+  text-decoration:none;
+  border:none;cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  transition:transform .4s cubic-bezier(.175,.885,.32,1.275), box-shadow .4s cubic-bezier(.175,.885,.32,1.275);
+}
+.buy-button:hover{transform:scale(1.04) rotate(-1deg);box-shadow:0 15px 40px rgba(0,0,0,.3)}
+.buy-button.is-disabled{opacity:.55;cursor:not-allowed;transform:none!important;box-shadow:0 10px 30px rgba(0,0,0,.12)}
 
-        blockquote::after {
-            content: "“";
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 8rem;
-            opacity: 0.05;
-        }
+.microcopy{margin-top:16px;font-size:1.08rem;font-weight:850;color:var(--muted)}
 
-        .usage-steps {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+/* ---------- Final line ---------- */
+.final-quote{
+  margin-top:42px;
+  text-align:center;
+  font-size:2.05rem;font-weight:950;
+  background:linear-gradient(to right,#000,#666);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent
+}
 
-        .step-tag {
-            background: var(--text-dark);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
+/* ---------- Footer ---------- */
+footer{
+  margin-top:36px;
+  padding:40px 0;
+  text-align:center;
+  border-top:1px solid rgba(0,0,0,.05)
+}
+.footer-brand{margin:0 0 10px;font-size:1.2rem;font-weight:950}
 
-        /* 價格區塊 - 藝術強化 */
-        .cta-section {
-            text-align: center;
-            padding: 60px 30px;
-            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-            border-radius: 30px;
-            margin-top: 50px;
-            border: 2px solid white;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-        }
+/* footer mail icon (icon-only contact) */
+.contact-info{margin-top:14px;display:flex;align-items:center;gap:12px;justify-content:center}
+.contact-info .copyright{font-size:.8rem;color:var(--accent)}
+.mail-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(15,23,42,.15);
+  color:var(--ink);text-decoration:none;
+  transition:background .2s ease, transform .2s ease
+}
+.mail-icon:hover{background:rgba(15,23,42,.05);transform:translateY(-1px)}
+.mail-icon svg{width:18px;height:18px}
 
-        .price-wrapper {
-            margin-bottom: 20px;
-        }
+/* ---------- Print ---------- */
+@media print{
+  .bg-blobs{display:none}
+  section{background:#fff!important;border:1px solid #eee;backdrop-filter:none}
+  .buy-button{display:none}
+  body{font-size:12pt}
+}
+</style>
 
-        .price-label {
-            font-size: 4rem;
-            font-weight: 900;
-            letter-spacing: -0.05em;
-        }
-
-        .buy-button {
-            display: inline-block;
-            background: var(--text-dark);
-            color: white;
-            padding: 22px 70px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.6rem;
-            font-weight: 900;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .buy-button:hover {
-            transform: scale(1.05) rotate(-1deg);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .final-quote {
-            font-size: 2.2rem;
-            font-weight: 900;
-            text-align: center;
-            margin-top: 50px;
-            background: linear-gradient(to right, #000, #666);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            margin-top: 40px;
-        }
-
-        .footer-brand { font-size: 1.2rem; font-weight: 900; margin-bottom: 10px; }
-        .contact-info a { color: var(--text-dark); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--accent-warm); }
-
-        /* PDF 優化 */
-        @media print {
-            .bg-blobs { display: none; }
-            section { background: white !important; border: 1px solid #eee; backdrop-filter: none; }
-            .buy-button { display: none; }
-            body { font-size: 12pt; }
-        }
-
-    </style>
 </head>
-<body>
 
-<!-- 背景藝術色塊 -->
-<div class="bg-blobs">
+<body>
+  <div class="bg-blobs">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
-</div>
+  </div>
 
-<div class="container">
-    <!-- 主視覺圖片 -->
-    <img src="lifebuffer_landing.jpg" alt="一段以聲音陪你畫畫的安靜時段" class="hero-image">
-
+  <div class="container">
+    <img src="lifebuffer_landing.jpg" alt="一段以聲音陪你畫畫的安靜時段" class="hero-image" />
 
     <header>
-        <h1>給最近很累、<br>但又不想跟任何人說話的你</h1>
-        <div class="subtitle">一段以聲音陪你畫畫的安靜時段</div>
+      <h1>給最近很累、<br />但又不想跟任何人說話的你</h1>
+      <div class="subtitle">15 分鐘｜一段以聲音陪你畫畫的安靜時段</div>
+
+      <div class="meta-row" aria-label="產品資訊">
+        <div class="pill">純音檔</div>
+        <div class="pill">一次購買・可重複播放</div>
+        <div class="pill">不用分享・不用互動</div>
+      </div>
     </header>
 
     <section>
-        <div class="intro-text">不用上課 ‧ 不用分享 ‧ 不用畫得好</div>
-        <div class="quote-box">
-            <p>你可能不是心情不好，</p>
-            <p>只是最近的生活，沒有留下什麼空間給你自己。</p>
-            <p>不是想解決什麼問題，也不是需要別人給建議，</p>
-            <p>只是想要一段不用應付、也不用解釋的時間。</p>
-        </div>
+      <div class="intro-text">不是課程 ‧ 不教畫畫 ‧ 不用畫得好</div>
+      <div class="quote-box">
+        <p>你可能不是心情不好，</p>
+        <p>只是最近的生活，沒有留下什麼空間給你自己。</p>
+        <p>不是想解決什麼問題，也不是需要別人給建議，</p>
+        <p>只是想要一段不用應付、也不用解釋的時間。</p>
+      </div>
+
+      <div class="boundary-note">
+        這不是心理諮商/治療/藝術治療，不提供情緒診斷或建議；這是一段專屬於你的創作陪伴時間。
+      </div>
     </section>
 
     <section>
-        <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
-            不需要你做的事
-        </h3>
-        <ul>
-            <li>說出你的感受</li>
-            <li>跟任何人互動</li>
-            <li>理解畫畫技巧</li>
-            <li>想清楚要畫什麼</li>
-        </ul>
-        <div class="highlight-box">
-            你只需要準備紙和筆，然後，跟著聲音慢慢走。
-        </div>
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+          <line x1="12" y1="2" x2="12" y2="12"></line>
+        </svg>
+        不需要你做的事
+      </h3>
+      <ul>
+        <li>說出你的感受</li>
+        <li>跟任何人互動</li>
+        <li>理解畫畫技巧</li>
+        <li>想清楚要畫什麼</li>
+      </ul>
+      <div class="highlight-box">
+        你只要準備紙和筆，戴上耳機，跟著聲音做一次就好。
+      </div>
     </section>
 
     <section>
-        <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            那你會經歷什麼？
-        </h3>
-        <p>這是一段以聲音為主的陪伴流程。聲音會在不同時刻提醒你：</p>
-        <ul style="margin-top: 15px;">
-            <li>什麼時候可以開始</li>
-            <li>什麼時候可以停一下看看</li>
-            <li>什麼時候可以繼續</li>
-            <li>什麼時候可以慢慢收尾</li>
-        </ul>
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        你會經歷什麼？
+      </h3>
+      <p>這是一段以聲音為主的陪伴流程。聲音會在不同時刻提醒你：</p>
+      <ul style="margin-top: 14px;">
+        <li>什麼時候可以開始</li>
+        <li>什麼時候可以停一下看看</li>
+        <li>什麼時候可以繼續</li>
+        <li>什麼時候可以慢慢收尾</li>
+      </ul>
+      <div class="boundary-note" style="margin-top: 16px;">
+        全程你可以不說話；也不會有人評價你的作品。結束時會有清楚的收尾，不拖著你走。
+      </div>
     </section>
 
     <blockquote>
-        「你在裡面，自己走；<br>有人在旁邊，陪著。」
+      「你在裡面，自己走；<br />有人在旁邊，陪著。」
     </blockquote>
 
     <section>
-        <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><circle cx="12" cy="12" r="2"></circle></svg>
-            為什麼是用聲音？
-        </h3>
-        <p>因為有時候，你只是想要：不被看見、不被要求回應、不需要打開鏡頭，但也不想完全一個人。</p>
-        <p>聲音，剛好留下一個空間。</p>
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+          <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+        為什麼是用聲音？
+      </h3>
+      <p>因為有時候，你只是想要：不被看見、不被要求回應、不需要打開鏡頭，但也不想完全一個人。</p>
+      <p>聲音，剛好留下一個空間。</p>
+      <p style="color: var(--text-soft); font-weight: 850;">適合的時刻：下班後、睡前、或你不想再滑手機的那 15 分鐘。</p>
     </section>
 
     <section>
-        <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            特別適合你，如果你：
-        </h3>
-        <ul>
-            <li>想畫畫，但常常畫沒多久就停</li>
-            <li>想靜一下，卻很難真的靜下來</li>
-            <li>不想被教，也不想被分析</li>
-            <li>只希望有一小段時間，是留給自己的</li>
-        </ul>
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        特別適合你，如果你：
+      </h3>
+      <ul>
+        <li>想畫畫，但常常畫沒多久就停</li>
+        <li>想靜一下，卻很難真的靜下來</li>
+        <li>不想被教，也不想被分析</li>
+        <li>想要一小段「不用應付任何人」的時間</li>
+      </ul>
+
+      <div class="two-col" style="margin-top: 18px;">
+        <!-- ✅ 你會得到什麼：改成較吸睛（但非警告）的 focus 底色 -->
+        <div class="soft-card is-focus">
+          <div class="title">你會得到什麼</div>
+          <p class="desc">一段「被設計過的時間」：有人在場、給節奏、給停頓、給收尾，陪你把第一筆畫下去。</p>
+        </div>
+
+        <!-- ✅ 不太適合你：回到一般卡片，不再用警示色 -->
+        <div class="soft-card">
+          <div class="title">不太適合你，如果你正在找</div>
+          <p class="desc">需要被分析、被建議、或希望有人處理情緒困擾的服務。這種情況更建議直接找專業諮商資源。</p>
+        </div>
+      </div>
     </section>
 
     <section>
-        <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
-            使用方式
-        </h3>
-        <div class="usage-steps">
-            <div class="step-tag">15 分鐘陪伴</div>
-            <div class="step-tag">安靜空間</div>
-            <div class="step-tag">戴上耳機</div>
-            <div class="step-tag">準備紙筆</div>
-            <div class="step-tag">按下播放</div>
-        </div>
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+        </svg>
+        使用方式
+      </h3>
+      <div class="usage-steps">
+        <div class="step-tag">15 分鐘</div>
+        <div class="step-tag">戴上耳機</div>
+        <div class="step-tag">準備紙筆</div>
+        <div class="step-tag">按下播放</div>
+        <div class="step-tag">畫到收尾</div>
+      </div>
+      <div class="boundary-note" style="margin-top: 16px;">
+        建議：找一個你不會被打斷的角落；如果中途分心，也沒關係，照著聲音回來即可。
+      </div>
     </section>
 
-    <div class="cta-section">
-        <div class="price-wrapper">
-            <span style="font-size: 1.8rem; vertical-align: super; font-weight: 900;">NT$</span>
-            <span class="price-label">299</span>
-        </div>
-       <a class="buy-button" href="你的表單或連結" target="_blank" rel="noopener">
-  取得這段陪伴時間
-</a>
+    <div class="cta-section" role="region" aria-label="購買資訊">
+      <div class="price-wrapper" aria-label="價格">
+        <span style="font-size: 1.7rem; vertical-align: super; font-weight: 950;">NT$</span>
+        <span class="price-label">299</span>
+      </div>
 
-        <p style="margin-top: 20px; font-size: 1.2rem; font-weight: 800;">一次取得，隨時可以回來</p>
-    </div>
+      <a class="buy-button is-disabled" href="#" aria-disabled="true">
+        取得音檔（可重複播放）
+      </a>
+
+      <p class="microcopy">一次購買｜可重複播放｜不需要預約</p>
+
+   </div>
 
     <div class="final-quote">
-        你不需要變好，只需要開始。
+      你不需要準備好，只需要畫下第一筆。
     </div>
 
     <footer>
-        <div class="footer-brand">LifeBuffer Space</div>
-        <p>為忙碌的生活留下一個緩衝的空間</p>
-        <div class="contact-info">
-            聯絡：<a href="mailto:lifebuffer.space@gmail.com">lifebuffer.space@gmail.com</a>
-        </div>
-        <p style="margin-top: 15px; font-size: 0.8rem; color: #94A3B8;">© 2026 LifeBuffer Space </p>
-    </footer>
+      <div class="footer-brand">LifeBuffer Space</div>
+      <p style="margin: 8px 0 0 0; font-weight: 850; color: var(--text-soft);">
+        為忙碌的生活留下一個緩衝的空間
+      </p>
+<div><hr>
+    <p>大家都說照顧自己很重要。只是現代的生活太快、太滿，<br>連「怎麼慢下來」，都變成一件需要被提醒的事。</p>
+  </div>
+     <!--聯絡信箱-->
+<div class="contact-info">
+  <span class="copyright">© 2026 LifeBuffer Space</span>
+
+  <a href="mailto:lifebuffer.space@gmail.com"
+     class="mail-icon"
+     aria-label="Email LifeBuffer Space">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+      <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+  </a>
 </div>
 
+</div>
+
+  <script>
+    (function () {
+      const btn = document.querySelector(".buy-button.is-disabled");
+      if (!btn) return;
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+      });
+    })();
+  </script>
 </body>
-
 </html>
-
