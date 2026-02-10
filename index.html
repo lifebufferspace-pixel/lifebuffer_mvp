@@ -279,6 +279,31 @@ footer{
 }
 .mail-icon:hover{background:rgba(15,23,42,.05);transform:translateY(-1px)}
 .mail-icon svg{width:18px;height:18px}
+/* --- Above-the-fold layout (Option C) --- */
+.hero-image{
+  /* 讓圖變成「首屏上半」 */
+  margin: 0 0 18px;
+  max-height: 320px;       /* 你可微調 260~360 */
+  object-fit: cover;       /* 裁切不變形 */
+}
+
+/* 手機更保守，避免圖佔滿 */
+@media (max-width: 480px){
+  .hero-image{ max-height: 220px; }
+}
+
+/* Header 在首屏更緊湊 */
+header{ margin: 0 0 18px; }
+
+/* 標題稍微收斂，讓同屏容納 subtitle + pills */
+h1{ font-size: 2.5rem; }   /* 原本 3rem；不動文字只改大小 */
+
+@media (max-width: 480px){
+  h1{ font-size: 2.1rem; }
+  .subtitle{ font-size: 1.2rem; }
+  .pill{ font-size: .95rem; padding: 7px 12px; }
+}
+
 
 /* ---------- Print ---------- */
 @media print{
@@ -299,18 +324,19 @@ footer{
   </div>
 
   <div class="container">
-    <img src="lifebuffer_landing.jpg" alt="一段以聲音陪你畫畫的安靜時段" class="hero-image" />
+<header>
+  <img src="lifebuffer_landing.jpg" alt="一段以聲音陪你畫畫的安靜時段" class="hero-image" />
 
-    <header>
-      <h1>給最近很累、<br />但又不想跟任何人說話的你</h1>
-      <div class="subtitle">15 分鐘｜一段以聲音陪你畫畫的安靜時段</div>
+  <h1>給最近很累、<br />但又不想跟任何人說話的你</h1>
+  <div class="subtitle">15 分鐘｜一段以聲音陪你畫畫的安靜時段</div>
 
-      <div class="meta-row" aria-label="產品資訊">
-        <div class="pill">純音檔</div>
-        <div class="pill">一次購買・可重複播放</div>
-        <div class="pill">不用分享・不用互動</div>
-      </div>
-    </header>
+  <div class="meta-row" aria-label="產品資訊">
+    <div class="pill">純音檔</div>
+    <div class="pill">一次購買・可重複播放</div>
+    <div class="pill">不用分享・不用互動</div>
+  </div>
+</header>
+
 
     <section>
       <div class="intro-text">不是課程 ‧ 不教畫畫 ‧ 不用畫得好</div>
