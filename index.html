@@ -92,7 +92,8 @@ body::before {
 .container {
   max-width: 880px;
   margin: 0 auto;
-  padding: 40px 24px 60px;
+  /* 上方 padding 預留 navbar 高度（約 56px）+ 原本的 40px */
+  padding: 96px 24px 60px;
 }
 
 /* ==========================================
@@ -121,15 +122,28 @@ body::before {
 .reveal-children.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.4s; }
 
 /* ==========================================
-   Brand Bar
+   Brand Bar — Sticky Navbar
    ========================================== */
 .brand-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 36px;
-  padding-bottom: 20px;
+  padding: 14px 28px;
+  background: rgba(255, 249, 240, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.brand-bar.scrolled {
+  background: rgba(255, 249, 240, 0.97);
+  box-shadow: 0 4px 24px rgba(45, 37, 32, 0.08);
 }
 
 .brand-name {
@@ -138,7 +152,12 @@ body::before {
   font-weight: 700;
   color: var(--accent-dark);
   letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
+
+.brand-name:hover { opacity: 0.7; }
 
 .brand-tagline {
   font-size: 0.82rem;
@@ -908,7 +927,7 @@ footer hr {
 }
 
 @media (max-width: 600px) {
-  .container { padding: 28px 18px 100px; }
+  .container { padding: 28px 18px 100px; padding-top: 84px; }
 
   .hero-image { max-height: 220px; border-radius: 20px; }
 
@@ -1009,15 +1028,13 @@ h2.quiet-title {
   </a>
 </div>
 
-<div class="container">
+<!-- Brand Bar (Fixed Navbar) — 固定在頁面頂部，點品牌名稱回到最上方 -->
+<nav class="brand-bar" aria-label="網站導覽">
+  <a class="brand-name" href="#top" aria-label="回到頁面頂部">LifeBuffer Space</a>
+  <span class="brand-tagline">為忙碌的生活留下緩衝的空間</span>
+</nav>
 
-  <!-- Brand Bar -->
-  <div class="brand-bar reveal">
-    <div class="brand-name">LifeBuffer Space</div>
-    <div class="brand-tagline">為忙碌的生活留下緩衝的空間</div>
-  </div>
-
-  <!-- Hero Section -->
+<div class="container" id="top">
   <header>
     <img alt="一段以聲音陪你畫畫的安靜時段" class="hero-image" height="300" loading="eager" src="lifebuffer_landing.jpg" width="880"/>
 
@@ -1213,7 +1230,7 @@ h2.quiet-title {
     </div>
     <div class="refund-guarantee">
       <span class="refund-icon">🛡️</span>
-      <p class="refund-text">若未能如期完成，將全額原路退款。退款由付款平台直接處理。</p>
+      <p class="refund-text">若未能如期完成，將全額原路退款。退款由付款平台直接處理，不需說明理由，也不需要你主動追蹤。</p>
     </div>
   </section>
 
@@ -1233,7 +1250,11 @@ h2.quiet-title {
         <span class="trust-item">逾期全額退款</span>
         <span class="trust-item">不需分享</span>
       </div>
-
+      <div class="cta-email-link">
+        <a href="https://forms.gle/3rw3J7wgoNXtrnJL8" class="cta-sub-link">
+          不想現在決定？先留下 Email →
+        </a>
+      </div>
   </section>
 
   <!-- Final Quote -->
@@ -1244,11 +1265,13 @@ h2.quiet-title {
   <!-- Quiet Signup -->
   <section class="quiet-signup reveal" id="waitlist">
     <h2 class="quiet-title">如果你還沒準備好，也可以先留下信箱</h2>
-    <p class="quiet-desc">當這段陪伴再次開放時，我會通知你。</p>
+    <p class="quiet-desc">未來若有新的陪伴場次或音檔開放，讓我們通知你。</p>
+    <p class="quiet-note">不寄廣告，只在必要時聯繫。</p>
     <div class="quiet-action">
       <a class="buy-button btn-secondary" href="https://forms.gle/3rw3J7wgoNXtrnJL8" rel="noopener" target="_blank">
         留下 Email 接收通知
       </a>
+      <p class="microcopy">只用於開放通知，不寄其他內容。</p>
     </div>
   </section>
 
@@ -1261,20 +1284,36 @@ h2.quiet-title {
     <hr/>
     <div class="footer-brand">LifeBuffer Space</div>
     <p class="footer-sub">為忙碌的生活留下一個緩衝的空間</p>
-    <div class="contact-info">
-      <span class="copyright">© 2026 LifeBuffer Space</span>
-      <a aria-label="Email LifeBuffer Space" class="mail-icon" href="/cdn-cgi/l/email-protection#7a121f1616153a16131c1f180f1c1c1f0854090a1b191f">
-        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-          <rect height="16" rx="2" width="20" x="2" y="4"></rect>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-      </a>
-    </div>
+   <div class="contact-info">
+  <span class="copyright">© 2026 LifeBuffer Space</span>
+  <a 
+    aria-label="Email LifeBuffer Space"
+    title="寄信給 LifeBuffer Space"
+    class="mail-icon"
+    href="mailto:lifebuffer.space@gmail.com?subject=LifeBuffer%20詢問"
+    rel="noopener">
+    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+      <rect height="16" rx="2" width="20" x="2" y="4"></rect>
+      <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+  </a>
+</div>
   </footer>
 
 </div>
 
 <script>
+// ==========================================
+// Navbar — 滾動後加深背景
+// ==========================================
+(function() {
+  var bar = document.querySelector('.brand-bar');
+  if (!bar) return;
+  window.addEventListener('scroll', function() {
+    bar.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+})();
+
 // ==========================================
 // Scroll Reveal — 滾動進場動畫
 // ==========================================
