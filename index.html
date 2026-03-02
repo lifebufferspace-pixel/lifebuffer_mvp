@@ -1,937 +1,1313 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>15 分鐘｜一段用聲音陪你畫畫的安靜時段</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="不是課程、不用分享、不教畫畫。15 分鐘，以聲音陪你把第一筆畫下去。一次取得，可重複播放。">
-  <link rel="canonical" href="https://lifebuffer-space.netlify.app/">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="LifeBuffer Space">
-  <meta property="og:title" content="15 分鐘｜一段以聲音陪你畫畫的安靜時段">
-  <meta property="og:description" content="不是課程、不用分享、不教畫畫。15 分鐘，以聲音陪你把第一筆畫下去。一次取得，可重複播放。">
-  <meta property="og:url" content="https://lifebuffer-space.netlify.app/">
-  <meta property="og:image" content="https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg">
-  <meta property="og:image:alt" content="15 分鐘用聲音陪你畫畫的安靜時段">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="15 分鐘｜一段用聲音陪你畫畫的安靜時段">
-  <meta name="twitter:description" content="不是課程、不用分享、不教畫畫。15 分鐘，用聲音陪你把第一筆畫下去。">
-  <meta name="twitter:image" content="https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg">
-  
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "15 分鐘｜一段用聲音陪你畫畫的安靜時段",
-    "description": "不是課程、不用分享、不教畫畫。15 分鐘，用聲音陪你把第一筆畫下去。一次取得，可重複播放。",
-    "image": "https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg",
-    "brand": {
-      "@type": "Brand",
-      "name": "LifeBuffer Space"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "TWD",
-      "price": "299",
-      "availability": "https://schema.org/PreOrder"
-    }
-  }
-  </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>15 分鐘｜一段用聲音陪你畫畫的安靜時段</title>
+<meta content="不是課程、不用分享、不教畫畫。15 分鐘，以聲音陪你把第一筆畫下去。一次取得，可重複播放。" name="description"/>
+<link href="https://lifebuffer-space.netlify.app/" rel="canonical"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="LifeBuffer Space" property="og:site_name"/>
+<meta content="15 分鐘｜一段以聲音陪你畫畫的安靜時段" property="og:title"/>
+<meta content="不是課程、不用分享、不教畫畫。15 分鐘，以聲音陪你把第一筆畫下去。一次取得，可重複播放。" property="og:description"/>
+<meta content="https://lifebuffer-space.netlify.app/" property="og:url"/>
+<meta content="https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg" property="og:image"/>
+<meta content="15 分鐘用聲音陪你畫畫的安靜時段" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="15 分鐘｜一段用聲音陪你畫畫的安靜時段" name="twitter:title"/>
+<meta content="不是課程、不用分享、不教畫畫。15 分鐘，用聲音陪你把第一筆畫下去。" name="twitter:description"/>
+<meta content="https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "15 分鐘｜一段用聲音陪你畫畫的安靜時段",
+  "description": "不是課程、不用分享、不教畫畫。15 分鐘，用聲音陪你把第一筆畫下去。一次取得，可重複播放。",
+  "image": "https://lifebuffer-space.netlify.app/lifebuffer_landing.jpg",
+  "brand": {"@type": "Brand", "name": "LifeBuffer Space"},
+  "offers": {"@type": "Offer", "priceCurrency": "TWD", "price": "299", "availability": "https://schema.org/PreOrder"}
+}
+</script>
 
-  <style>
-    /* ==========================================
-       Design Tokens - Optimized Warm Theme
-       ========================================== */
-    :root {
-      --bg: #FFF9F0;
-      --ink: #2D2520;
-      --ink-soft: #5C4F47;
-      --accent: #E4A574;
-      --accent-dark: #D4765B;
-      --sage: #A8B89F;
-      --cream: #F9EBD8;
-      --peach: #FFDCC8;
-      --shadow: rgba(209, 118, 91, 0.15);
-      --border: rgba(228, 165, 116, 0.25);
-      
-      /* System fonts for instant load */
-      --font-display: ui-serif, Georgia, "Times New Roman", serif;
-      --font-body: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "微軟正黑體", sans-serif;
-    }
+<!-- Google Fonts: Noto Serif TC + Noto Sans TC -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
-    /* ==========================================
-       Critical CSS - Above the fold only
-       ========================================== */
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      line-height: 1.75;
-      color: var(--ink);
-      background: var(--bg);
-    }
-
-    /* Simple gradient background - no animation */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background: 
-        radial-gradient(circle at 20% 20%, rgba(255, 220, 200, 0.4), transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(228, 165, 116, 0.3), transparent 60%);
-      pointer-events: none;
-    }
-
-    /* ==========================================
-       Layout
-       ========================================== */
-    .container {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 30px 20px;
-    }
-
-    /* ==========================================
-       Header & Hero
-       ========================================== */
-    header {
-      margin: 0 0 20px;
-    }
-
-    .hero-image {
-      width: 100%;
-      height: auto;
-      max-height: 280px;
-      object-fit: cover;
-      display: block;
-      margin: 0 0 20px;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px var(--shadow);
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-family: var(--font-display);
-      font-size: 2.6rem;
-      font-weight: 900;
-      line-height: 1.25;
-      color: var(--ink);
-    }
-
-    .subtitle {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--accent-dark);
-      margin-bottom: 6px;
-    }
-
-    .subtitle::before {
-      content: "";
-      width: 50px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    /* ==========================================
-       Meta Pills
-       ========================================== */
-    .meta-row {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .pill {
-      padding: 10px 18px;
-      border-radius: 50px;
-      border: 2px solid var(--border);
-      background: var(--cream);
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--ink-soft);
-    }
-
-    /* ==========================================
-       Sections
-       ========================================== */
-    section {
-      margin: 0 0 16px;
-      padding: 24px 28px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 2px solid var(--border);
-      box-shadow: 0 10px 40px var(--shadow);
-    }
-
-    h3 {
-      margin: 0 0 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-family: var(--font-display);
-      font-size: 1.85rem;
-      font-weight: 900;
-      color: var(--ink);
-    }
-
-    h3 svg {
-      width: 36px;
-      height: 36px;
-      stroke: var(--accent-dark);
-      stroke-width: 2.5;
-      flex-shrink: 0;
-    }
-
-    p {
-      margin: 0 0 1.2rem;
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: var(--ink-soft);
-      line-height: 1.8;
-    }
-
-    /* ==========================================
-       Typography Components
-       ========================================== */
-    .intro-text {
-      margin: 0 0 18px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .quote-box {
-      padding: 22px;
-      border-radius: 20px;
-      background: var(--cream);
-      border-left: 5px solid var(--accent-dark);
-    }
-
-    .quote-box p {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .boundary-note {
-      margin-top: 16px;
-      padding: 16px 20px;
-      border-radius: 16px;
-      background: rgba(168, 184, 159, 0.15);
-      border: 2px dashed var(--sage);
-      color: var(--ink-soft);
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.7;
-    }
-
-    .highlight-box {
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 3px dashed var(--border);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--ink);
-      font-family: var(--font-display);
-    }
-
-    blockquote {
-      margin: 30px 0;
-      padding: 30px;
-      text-align: center;
-      font-family: var(--font-display);
-      font-size: 1.85rem;
-      font-weight: 600;
-      color: var(--accent-dark);
-      position: relative;
-      background: var(--cream);
-      border-radius: 24px;
-      line-height: 1.6;
-    }
-
-    blockquote::before {
-      content: """;
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 10rem;
-      opacity: 0.08;
-      color: var(--accent);
-      font-family: var(--font-display);
-    }
-
-    /* ==========================================
-       Lists
-       ========================================== */
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      margin: 0 0 12px;
-      display: flex;
-      align-items: flex-start;
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--ink-soft);
-    }
-
-    li::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      margin: 10px 16px 0 0;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    /* ==========================================
-       Usage Steps
-       ========================================== */
-    .usage-steps {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .step-tag {
-      padding: 11px 20px;
-      border-radius: 50px;
-      background: var(--accent-dark);
-      color: #fff;
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    /* ==========================================
-       Two Column Cards
-       ========================================== */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .soft-card {
-      padding: 20px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.7);
-      border: 2px solid var(--border);
-    }
-
-    .soft-card .title {
-      margin: 0 0 12px;
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 900;
-      color: var(--ink);
-    }
-
-    .soft-card .desc {
-      margin: 0;
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--ink-soft);
-      line-height: 1.7;
-    }
-
-    .soft-card.is-focus {
-      background: var(--peach);
-      border-color: var(--accent);
-    }
-
-    /* ==========================================
-       CTA Section
-       ========================================== */
-    .cta-section {
-      margin-top: 30px;
-      padding: 35px 28px;
-      text-align: center;
-      border-radius: 24px;
-      border: 3px solid var(--accent);
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 20px 60px var(--shadow);
-    }
-
-    .price-wrapper {
-      margin-bottom: 16px;
-    }
-
-    .price-label {
-      font-family: var(--font-display);
-      font-size: 3.8rem;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--accent-dark);
-    }
-
-    .buy-button {
-      display: inline-block;
-      padding: 18px 55px;
-      border-radius: 60px;
-      background: var(--accent-dark);
-      color: #fff;
-      font-size: 1.35rem;
-      font-weight: 900;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 35px rgba(209, 118, 91, 0.4);
-    }
-
-    .buy-button.is-disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .microcopy {
-      margin-top: 16px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--ink-soft);
-    }
-
-    /* ==========================================
-       Final Quote
-       ========================================== */
-.final-quote {
-  margin-top: 30px;
-  padding: 25px;
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--accent-dark);
-  background: #F2F0EB; /* ← 改這行 */
-  border-radius: 24px;
-  line-height: 1.5;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04); /* 可選：更有層級 */
+<style>
+/* ==========================================
+   Design Tokens
+   ========================================== */
+:root {
+  --bg: #FFF9F0;
+  --ink: #2D2520;
+  --ink-soft: #5C4F47;
+  --accent: #E4A574;
+  --accent-dark: #C96A45;
+  --sage: #A8B89F;
+  --cream: #F9EBD8;
+  --peach: #FFDCC8;
+  --shadow: rgba(201, 106, 69, 0.15);
+  --border: rgba(228, 165, 116, 0.3);
+  --font-display: 'Noto Serif TC', ui-serif, Georgia, serif;
+  --font-body: 'Noto Sans TC', ui-sans-serif, -apple-system, "Microsoft JhengHei", sans-serif;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-lg: 28px;
+  --radius-pill: 100px;
 }
 
+/* ==========================================
+   Reset & Base
+   ========================================== */
+*, *::before, *::after { box-sizing: border-box; }
 
-    /* ==========================================
-       Footer
-       ========================================== */
-    footer {
-      margin-top: 35px;
-      padding: 35px 0 25px;
-      text-align: center;
-      border-top: 2px solid var(--border);
-    }
+html { scroll-behavior: smooth; }
 
-    .footer-brand {
-      margin: 0 0 10px;
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: var(--accent-dark);
-    }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: 1.8;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
 
-    footer hr {
-      margin: 25px auto;
-      max-width: 200px;
-      border: none;
-      height: 2px;
-      background: var(--accent);
-    }
+/* Subtle texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(255, 220, 200, 0.5) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(228, 165, 116, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 50%, rgba(249, 235, 216, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-    .contact-info {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      justify-content: center;
-    }
+/* ==========================================
+   Layout
+   ========================================== */
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
 
-    .contact-info .copyright {
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      font-weight: 500;
-    }
+/* ==========================================
+   Scroll Reveal Animation
+   ========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .mail-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 2px solid var(--border);
-      background: var(--cream);
-      color: var(--accent-dark);
-      text-decoration: none;
-    }
+/* Stagger children */
+.reveal-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-children.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+.reveal-children.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.1s; }
+.reveal-children.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.2s; }
+.reveal-children.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.3s; }
+.reveal-children.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.4s; }
 
-    .mail-icon svg {
-      width: 20px;
-      height: 20px;
-    }
+/* ==========================================
+   Brand Bar
+   ========================================== */
+.brand-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
 
-    /* ==========================================
-       Progressive Enhancement - Hover effects
-       Only load on devices that support hover
-       ========================================== */
-    @media (hover: hover) {
-      .hero-image {
-        transition: transform 0.4s ease;
-      }
-      
-      .hero-image:hover {
-        transform: translateY(-5px);
-      }
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  letter-spacing: 0.05em;
+}
 
-      .pill {
-        transition: transform 0.3s ease;
-      }
+.brand-tagline {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
 
-      .pill:hover {
-        transform: translateY(-2px);
-      }
+/* ==========================================
+   Hero Section
+   ========================================== */
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 0 0 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
 
-      section {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+.hero-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 70px rgba(201, 106, 69, 0.22);
+}
 
-      section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 50px rgba(209, 118, 91, 0.2);
-      }
+/* ==========================================
+   Typography — Hero
+   ========================================== */
+h1 {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
 
-      .step-tag {
-        transition: transform 0.3s ease;
-      }
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 20px;
+}
 
-      .step-tag:hover {
-        transform: translateY(-3px) scale(1.05);
-      }
+.subtitle::before {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
 
-      .soft-card {
-        transition: all 0.3s ease;
-      }
+/* ==========================================
+   Meta Pills
+   ========================================== */
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
 
-      .soft-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px var(--shadow);
-      }
+.pill {
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border);
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
 
-      .buy-button {
-        transition: all 0.4s ease;
-      }
+.pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.95);
+}
 
-      .buy-button:hover {
-        transform: translateY(-5px) scale(1.03);
-        box-shadow: 0 20px 50px rgba(209, 118, 91, 0.5);
-      }
+/* Availability pill highlight */
+.pill.pill-highlight {
+  background: var(--peach);
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
 
-      .mail-icon {
-        transition: all 0.3s ease;
-      }
+/* ==========================================
+   Hero CTA
+   ========================================== */
+.hero-cta {
+  margin-top: 30px;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid var(--border);
+  text-align: center;
+}
 
-      .mail-icon:hover {
-        background: var(--accent-dark);
-        color: #fff;
-        transform: translateY(-3px);
-      }
-    }
+/* ==========================================
+   Buy Button — Primary CTA
+   ========================================== */
+.buy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 50px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--accent-dark) 0%, #E07A55 100%);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(201, 106, 69, 0.38), 0 2px 8px rgba(201,106,69,0.2);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
 
-    /* ==========================================
-       Responsive Design
-       ========================================== */
-    @media (min-width: 720px) {
-      .two-col {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+.buy-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
 
-    @media (max-width: 480px) {
-      .hero-image {
-        max-height: 220px;
-      }
+.buy-button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 45px rgba(201, 106, 69, 0.5), 0 4px 12px rgba(201,106,69,0.25);
+}
 
-      h1 {
-        font-size: 2rem;
-      }
+.buy-button:active {
+  transform: translateY(-1px) scale(0.99);
+  box-shadow: 0 6px 20px rgba(201, 106, 69, 0.4);
+}
 
-      .subtitle {
-        font-size: 1.15rem;
-      }
+.buy-button.is-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
-      .pill {
-        font-size: 0.9rem;
-        padding: 8px 14px;
-      }
+.microcopy {
+  margin-top: 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
 
-      section {
-        padding: 20px;
-      }
+.cta-sub-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--accent);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.cta-sub-link:hover { color: var(--accent-dark); }
 
-      h3 {
-        font-size: 1.55rem;
-      }
+/* ==========================================
+   Sections
+   ========================================== */
+section {
+  margin: 0 0 16px;
+  padding: 32px 32px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid var(--border);
+  box-shadow: 0 6px 30px var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
 
-      blockquote {
-        font-size: 1.4rem;
-        padding: 25px 18px;
-      }
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 50px rgba(201,106,69, 0.18);
+}
 
-      .price-label {
-        font-size: 3.2rem;
-      }
+/* ==========================================
+   Section Headings
+   ========================================== */
+h3 {
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1.3;
+}
 
-      .buy-button {
-        padding: 16px 45px;
-        font-size: 1.25rem;
-      }
+.section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--peach);
+  flex-shrink: 0;
+}
 
-      .final-quote {
-        font-size: 1.6rem;
-      }
-    }
+.section-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent-dark);
+  stroke-width: 2;
+}
 
-    /* ==========================================
-       Print Styles
-       ========================================== */
-    @media print {
-      body::before {
-        display: none;
-      }
+p {
+  margin: 0 0 1.1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  line-height: 1.85;
+}
 
-      section {
-        background: #fff !important;
-        border: 1px solid #ddd;
-        box-shadow: none;
-      }
+/* ==========================================
+   Typography Components
+   ========================================== */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
 
-      .buy-button {
-        display: none;
-      }
-    }
-  </style>
+.section-label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.quote-box {
+  padding: 24px 26px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--cream) 0%, rgba(255,240,225,0.5) 100%);
+  border-left: 4px solid var(--accent-dark);
+}
+
+.quote-box p {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 1.12rem;
+}
+
+.quote-box p:last-child { margin-bottom: 0; }
+
+.boundary-note {
+  margin-top: 20px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: rgba(168, 184, 159, 0.12);
+  border: 1.5px dashed rgba(168, 184, 159, 0.7);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.75;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.boundary-note::before {
+  content: "✦";
+  color: var(--sage);
+  font-size: 0.85rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.highlight-box {
+  margin-top: 22px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: var(--peach);
+  border: 1.5px solid var(--accent);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  font-family: var(--font-display);
+  line-height: 1.6;
+}
+
+/* Pull Quote */
+blockquote {
+  margin: 28px 0;
+  padding: 36px 32px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: linear-gradient(135deg, var(--cream), rgba(255,220,200,0.4));
+  border-radius: var(--radius-lg);
+  line-height: 1.65;
+  position: relative;
+  box-shadow: 0 6px 24px var(--shadow);
+  border: 1.5px solid var(--border);
+}
+
+blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9rem;
+  line-height: 1;
+  opacity: 0.06;
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+
+/* ==========================================
+   Lists
+   ========================================== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0 0 12px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin: 9px 16px 0 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   Usage Steps — Visual Timeline
+   ========================================== */
+.usage-steps {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 4px 0 20px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+}
+
+.step-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-dark), #E07A55);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  min-width: 70px;
+  box-shadow: 0 4px 14px rgba(201, 106, 69, 0.3);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+
+.step-tag:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(201, 106, 69, 0.4);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.step-arrow {
+  color: var(--accent);
+  font-size: 1.1rem;
+  padding: 0 6px;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   Two Column Cards
+   ========================================== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.soft-card {
+  padding: 22px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid var(--border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.soft-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px var(--shadow);
+}
+
+/* .title style now lives under .soft-card h4.title — see "交接備注" section */
+
+/* see h4.title::before above */
+
+.soft-card.is-focus h4.title::before { background: var(--accent-dark); }
+
+.soft-card .desc {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.soft-card.is-focus {
+  background: var(--peach);
+  border-color: var(--accent);
+}
+
+/* CTA section — direct on <section>, not inside wrapper div */
+.cta-section {
+  padding: 40px 32px;
+  text-align: center;
+  background: rgba(255,255,255,0.95) !important;
+  border: 2px solid var(--accent) !important;
+  box-shadow: 0 20px 60px rgba(201,106,69,0.18), 0 2px 8px var(--shadow) !important;
+}
+
+.price-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.price-currency {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+}
+
+.price-label {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--accent-dark);
+  line-height: 1;
+}
+
+/* Trust Signals */
+.trust-signals {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 18px 0 0;
+}
+
+.trust-item {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.trust-item::before {
+  content: "✓";
+  color: var(--sage);
+  font-weight: 900;
+}
+
+/* ==========================================
+   Preorder Note Section
+   ========================================== */
+.preorder-note {
+  background: rgba(255,255,255,0.75) !important;
+}
+
+.preorder-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--peach);
+  border: 1.5px solid var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.preorder-badge::before { content: "📅"; font-size: 0.8rem; }
+
+/* ==========================================
+   Refund Guarantee
+   ========================================== */
+.refund-guarantee {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(168, 184, 159, 0.1);
+  border: 1.5px solid rgba(168,184,159,0.5);
+  margin-top: 16px;
+}
+
+.refund-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.refund-text {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==========================================
+   Final Quote
+   ========================================== */
+.final-quote {
+  margin: 28px 0;
+  padding: 30px 28px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 700;
+  color: var(--ink);
+  background: linear-gradient(135deg, #F2F0EB 0%, rgba(255,220,200,0.3) 100%);
+  border-radius: var(--radius-lg);
+  line-height: 1.55;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  border: 1.5px solid var(--border);
+}
+
+/* ==========================================
+   Quiet Signup
+   ========================================== */
+.quiet-signup {
+  margin: 24px 0;
+  padding: 36px 28px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(15,23,42,0.08);
+  text-align: center;
+}
+
+.quiet-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.quiet-desc {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin: 0 0 6px;
+  line-height: 1.75;
+}
+
+.quiet-note {
+  margin-top: 0;
+  font-size: 0.85rem;
+  color: var(--sage);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Secondary button style for email CTA */
+.buy-button.btn-secondary {
+  background: var(--ink);
+  box-shadow: 0 6px 22px rgba(45,37,32,0.25);
+  font-size: 1.05rem;
+  padding: 16px 40px;
+}
+
+.buy-button.btn-secondary:hover {
+  box-shadow: 0 12px 36px rgba(45,37,32,0.35);
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+footer {
+  margin-top: 40px;
+  padding: 36px 0 28px;
+  text-align: center;
+  border-top: 1.5px solid var(--border);
+}
+
+.footer-brand {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--accent-dark);
+}
+
+footer p { font-size: 0.95rem; color: var(--ink-soft); font-weight: 400; }
+
+.footer-philosophy { font-size: 0.95rem; }
+
+.footer-sub { margin: 6px 0 0; font-size: 0.9rem; color: var(--ink-soft); }
+
+footer hr {
+  margin: 24px auto;
+  max-width: 180px;
+  border: none;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.contact-info {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+}
+
+.copyright {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.mail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--cream);
+  color: var(--accent-dark);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.mail-icon:hover {
+  background: var(--accent-dark);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(201,106,69,0.35);
+  border-color: transparent;
+}
+
+.mail-icon svg { width: 18px; height: 18px; }
+
+/* ==========================================
+   Sticky Mobile CTA
+   ========================================== */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 24px 24px;
+  background: rgba(255,249,240,0.95);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  z-index: 100;
+  box-shadow: 0 -8px 30px rgba(45,37,32,0.08);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sticky-cta.show {
+  transform: translateY(0);
+}
+
+.sticky-cta .buy-button {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 16px 24px;
+}
+
+.sticky-cta .sticky-price {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (min-width: 720px) {
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .usage-steps {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 28px 18px 100px; }
+
+  .hero-image { max-height: 220px; border-radius: 20px; }
+
+  h1 { font-size: 1.85rem; }
+
+  .subtitle { font-size: 1.05rem; }
+
+  section { padding: 24px 20px; }
+
+  h3 { font-size: 1.45rem; }
+
+  blockquote { font-size: 1.35rem; padding: 28px 20px; }
+
+  .price-label { font-size: 3.4rem; }
+
+  .buy-button { padding: 16px 36px; font-size: 1.15rem; }
+
+  .final-quote { font-size: 1.5rem; }
+
+  .cta-section { padding: 30px 20px; }
+
+  .hero-cta { padding: 22px 18px; }
+
+  .sticky-cta { display: block; }
+
+  .brand-tagline { display: none; }
+}
+
+/* moment-note: inline highlight in "為什麼是用聲音" section */
+.moment-note {
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--peach);
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin: 0;
+}
+
+/* quiet-action: CTA block inside waitlist section */
+.quiet-action {
+  text-align: center;
+}
+
+.quiet-action .microcopy {
+  margin-top: 10px;
+}
+
+/* cta-email-link: secondary link inside bottom CTA */
+.cta-email-link {
+  margin-top: 20px;
+}
+
+/* h4 inside soft-card (交接：勿改為 div，維持語意標籤) */
+.soft-card h4.title {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.soft-card h4.title::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Override: quiet-title is now h2 */
+h2.quiet-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+@media print {
+  body::before { display: none; }
+  section { background: #fff !important; border: 1px solid #ddd; box-shadow: none; }
+  .buy-button, .sticky-cta { display: none; }
+}
+</style>
 </head>
-
 <body>
-  <!-- Main Container -->
-  <div class="container">
-    
-    <!-- ==========================================
-         Hero Section
-         ========================================== -->
-    <header>
-      <!-- Hero Image -->
-      <img 
-        src="lifebuffer_landing.jpg" 
-        alt="一段以聲音陪你畫畫的安靜時段" 
-        class="hero-image" 
-        width="920" 
-        height="280" 
-        loading="eager"
-      >
-      
-      <!-- Main Heading -->
-      <h1>給最近很累、<br>但又不想跟任何人說話的你</h1>
-      
-      <!-- Subtitle -->
-      <div class="subtitle">15 分鐘｜一段以聲音陪你畫畫的安靜時段</div>
-      
-      <!-- Product Features Pills -->
-      <div class="meta-row" aria-label="產品資訊">
-        <div class="pill">純音檔</div>
-        <div class="pill">一次購買・可重複播放</div>
-        <div class="pill">不用分享・不用互動</div>
-      </div>
-    </header>
 
-    <!-- ==========================================
-         Introduction Section
-         ========================================== -->
-    <section>
-      <!-- Section Label -->
-      <div class="intro-text">不是課程 ‧ 不教畫畫 ‧ 不用畫得好</div>
-      
-      <!-- Main Message -->
-      <div class="quote-box">
-        <p>你可能不是心情不好，</p>
-        <p>只是最近的生活，沒有留下什麼空間給你自己。</p>
-        <p>不是想解決什麼問題，也不是需要別人給建議，</p>
-        <p>只是想要一段不用應付、也不用解釋的時間。</p>
-      </div>
-      
-      <!-- Disclaimer -->
-      <div class="boundary-note">
-        這是一段專屬於你的創作陪伴時間；這不是諮商/治療，不提供情緒診斷或建議。
-      </div>
-    </section>
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta" id="stickyCta" aria-label="購買按鈕（固定欄）">
+  <p class="sticky-price">NT$299・一次購買，可重複播放</p>
+  <a class="buy-button" href="https://portaly.cc/lifebuffer/product/TD0E28ZEcR68zPz4Zo2i" rel="noopener" target="_blank">
+    取得這段陪伴時間
+  </a>
+</div>
 
-    <!-- ==========================================
-         What You Don't Need Section
-         ========================================== -->
-    <section>
-      <!-- Section Heading -->
-      <h3>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
-          <line x1="12" y1="2" x2="12" y2="12"></line>
-        </svg>
-        不需要你做的事
-      </h3>
-      
-      <!-- List of Things NOT Required -->
-      <ul>
-        <li>說出你的感受</li>
-        <li>跟任何人互動</li>
-        <li>理解畫畫技巧</li>
-        <li>想清楚要畫什麼</li>
-      </ul>
-      
-      <!-- What IS Required -->
-      <div class="highlight-box">
-        你只要準備紙和筆，戴上耳機，跟著聲音做一次就好。
-      </div>
-    </section>
+<div class="container">
 
-    <!-- ==========================================
-         What You'll Experience Section
-         ========================================== -->
-    <section>
-      <!-- Section Heading -->
-      <h3>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-        </svg>
-        你會經歷什麼？
-      </h3>
-      
-      <!-- Description -->
-      <p>這是一段以聲音為主的陪伴流程。聲音會在不同時刻提醒你：</p>
-      
-      <!-- Process Steps -->
-      <ul>
-        <li>什麼時候可以開始</li>
-        <li>什麼時候可以停一下看看</li>
-        <li>什麼時候可以繼續</li>
-        <li>什麼時候可以慢慢收尾</li>
-      </ul>
-      
-      <!-- Reassurance -->
-      <div class="boundary-note">
-        全程你可以不說話；也不會有人評價你的作品。結束時會有清楚的收尾，不拖著你走。
-      </div>
-    </section>
-
-    <!-- ==========================================
-         Key Message Quote
-         ========================================== -->
-    <blockquote>
-      「你在裡面，自己走；<br>有人在旁邊，陪著。」
-    </blockquote>
-
-    <!-- ==========================================
-         Why Voice Section
-         ========================================== -->
-    <section>
-      <!-- Section Heading -->
-      <h3>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
-          <circle cx="12" cy="12" r="2"></circle>
-        </svg>
-        為什麼是用聲音？
-      </h3>
-      
-      <!-- Explanation -->
-      <p>因為有時候，你只是想要：不被看見、不被要求回應、不需要打開鏡頭，但也不想完全一個人。</p>
-      <p>聲音，剛好留下一個空間。</p>
-      
-      <!-- Best Time to Use -->
-      <p style="color: var(--ink-soft); font-weight: 600;">
-        適合的時刻：下班後、睡前、或你不想再滑手機的那 15 分鐘。
-      </p>
-    </section>
-
-    <!-- ==========================================
-         Who It's For Section
-         ========================================== -->
-    <section>
-      <!-- Section Heading -->
-      <h3>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-        </svg>
-        特別適合你，如果你：
-      </h3>
-      
-      <!-- Target Audience List -->
-      <ul>
-        <li>想畫畫，但常常畫沒多久就停</li>
-        <li>想靜一下，卻很難真的靜下來</li>
-        <li>不想被教，也不想被分析</li>
-        <li>想要一小段「不用應付任何人」的時間</li>
-      </ul>
-      
-      <!-- What You Get vs Not Suitable Cards -->
-      <div class="two-col">
-        <!-- What You Get -->
-        <div class="soft-card is-focus">
-          <div class="title">你會得到什麼</div>
-          <p class="desc">
-            一段「被設計過的時間」：有人在場、給節奏、給停頓、給收尾，陪你把第一筆畫下去。
-          </p>
-        </div>
-        
-        <!-- Not Suitable For -->
-        <div class="soft-card">
-          <div class="title">不太適合你，如果你正在找</div>
-          <p class="desc">
-            需要被分析、被建議、或希望有人處理情緒困擾的服務。這種情況更建議直接找專業諮商資源。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         How to Use Section
-         ========================================== -->
-    <section>
-      <!-- Section Heading -->
-      <h3>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
-        </svg>
-        使用方式
-      </h3>
-      
-      <!-- Usage Steps -->
-      <div class="usage-steps">
-        <div class="step-tag">15 分鐘</div>
-        <div class="step-tag">戴上耳機</div>
-        <div class="step-tag">準備紙筆</div>
-        <div class="step-tag">按下播放</div>
-        <div class="step-tag">畫到收尾</div>
-      </div>
-      
-      <!-- Tips -->
-      <div class="boundary-note">
-        建議：找一個你不會被打斷的角落；如果中途分心，也沒關係，照著聲音回來即可。
-      </div>
-    </section>
-
-    <!-- ==========================================
-         Call to Action - Purchase
-         ========================================== -->
-    <div class="cta-section" role="region" aria-label="購買資訊">
-      <!-- Price Display -->
-      <div class="price-wrapper" aria-label="價格">
-        <span style="font-size: 1.8rem; vertical-align: super; font-weight: 900; color: var(--ink-soft);">NT$</span>
-        <span class="price-label">299</span>
-      </div>
-      
-      <!-- Purchase Button (Disabled) -->
-      <a class="buy-button is-disabled" href="#" aria-disabled="true">
-        取得音檔（可重複播放）
-      </a>
-      
-      <!-- Additional Info -->
-      <p class="microcopy">一次購買｜可重複播放｜不需要預約</p>
-    </div>
-
-    <!-- ==========================================
-         Final Encouragement
-         ========================================== -->
-    <div class="final-quote">
-      你不需要準備好，只需要畫下第一筆。
-    </div>
-
-    <!-- ==========================================
-         Footer
-         ========================================== -->
-    <footer>
-<!-- Brand Philosophy -->
-      <p style="color: var(--ink-soft); font-weight: 500;">
-        大家都說照顧自己很重要。只是現代的生活太快、太滿，<br>
-        連「怎麼慢下來」，都變成一件需要被提醒的事。
-      </p>
-      <hr>
-      <!-- Brand Name -->
-      <div class="footer-brand">LifeBuffer Space</div>
-      
-      <!-- Brand Tagline -->
-      <p style="margin: 8px 0 0 0; font-weight: 600; color: var(--ink-soft);">
-        為忙碌的生活留下一個緩衝的空間
-      </p>
-      
-
-      
-      
-      
-      <!-- Contact & Copyright -->
-      <div class="contact-info">
-        <span class="copyright">© 2026 LifeBuffer Space</span>
-        
-        <!-- Email Contact -->
-        <a 
-          href="mailto:lifebuffer.space@gmail.com" 
-          class="mail-icon" 
-          aria-label="Email LifeBuffer Space"
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            aria-hidden="true"
-          >
-            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </a>
-      </div>
-    </footer>
-
+  <!-- Brand Bar -->
+  <div class="brand-bar reveal">
+    <div class="brand-name">LifeBuffer Space</div>
+    <div class="brand-tagline">為忙碌的生活留下緩衝的空間</div>
   </div>
 
-  <!-- ==========================================
-       Scripts
-       ========================================== -->
-  <script>
-    // Prevent disabled button from being clicked
-    (function() {
-      const btn = document.querySelector(".buy-button.is-disabled");
-      if (btn) {
-        btn.addEventListener("click", function(e) {
-          e.preventDefault();
-        });
-      }
-    })();
-  </script>
+  <!-- Hero Section -->
+  <header>
+    <img alt="一段以聲音陪你畫畫的安靜時段" class="hero-image" height="300" loading="eager" src="lifebuffer_landing.jpg" width="880"/>
 
+    <h1 class="reveal">給最近很累、<br/>但又不想跟任何人說話的你</h1>
+
+    <div class="subtitle reveal">15 分鐘｜一段以聲音陪你畫畫的安靜時段</div>
+
+    <div class="meta-row reveal-children" aria-label="產品資訊">
+      <div class="pill">🎧 純音檔</div>
+      <div class="pill">一次購買・可重複播放</div>
+      <div class="pill">不用分享・不用互動</div>
+      <div class="pill pill-highlight">📅 預計 3/24 提供</div>
+    </div>
+
+    <div class="hero-cta reveal">
+      <a class="buy-button" href="https://portaly.cc/lifebuffer/product/TD0E28ZEcR68zPz4Zo2i" rel="noopener" target="_blank">
+        取得這段陪伴時間（NT$299）
+      </a>
+      <p class="microcopy">預計 3/24 提供下載連結（Email 寄送）</p>
+      <a href="#waitlist" class="cta-sub-link">還不確定？先留下 Email，開放時提醒你 →</a>
+    </div>
+  </header>
+
+  <!-- Introduction Section -->
+  <section class="reveal">
+    <div class="section-label">不是課程 ‧ 不教畫畫 ‧ 不用畫得好</div>
+    <div class="quote-box">
+      <p>你可能不是心情不好，</p>
+      <p>只是最近的生活，沒有留下什麼空間給你自己。</p>
+      <p>不是想解決什麼問題，也不是需要別人給建議，</p>
+      <p>只是想要一段不用應付、也不用解釋的時間。</p>
+    </div>
+    <div class="boundary-note">
+      這是一段專屬於你的創作陪伴時間；這不是諮商/治療，不提供情緒診斷或建議。
+    </div>
+  </section>
+
+  <!-- What You Don't Need Section -->
+  <section class="reveal">
+    <h3>
+      <span class="section-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+          <line x1="12" x2="12" y1="2" y2="12"></line>
+        </svg>
+      </span>
+      不需要你做的事
+    </h3>
+    <ul>
+      <li>說出你的感受</li>
+      <li>跟任何人互動</li>
+      <li>理解畫畫技巧</li>
+      <li>想清楚要畫什麼</li>
+    </ul>
+    <div class="highlight-box">
+      你只要準備紙和筆，戴上耳機，跟著聲音做一次就好。
+    </div>
+  </section>
+
+  <!-- What You'll Experience Section -->
+  <section class="reveal">
+    <h3>
+      <span class="section-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+      </span>
+      你會經歷什麼？
+    </h3>
+    <p>這是一段以聲音為主的陪伴流程。聲音會在不同時刻提醒你：</p>
+    <ul>
+      <li>什麼時候可以開始</li>
+      <li>什麼時候可以停一下看看</li>
+      <li>什麼時候可以繼續</li>
+      <li>什麼時候可以慢慢收尾</li>
+    </ul>
+    <div class="boundary-note">
+      全程你可以不說話；也不會有人評價你的作品。結束時會有清楚的收尾，不拖著你走。
+    </div>
+  </section>
+
+  <!-- Pull Quote -->
+  <blockquote class="reveal">
+    「你在裡面，自己走；<br/>有人在旁邊，陪著。」
+  </blockquote>
+
+  <!-- Why Voice Section -->
+  <section class="reveal">
+    <h3>
+      <span class="section-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+          <line x1="12" x2="12" y1="19" y2="23"></line>
+          <line x1="8" x2="16" y1="23" y2="23"></line>
+        </svg>
+      </span>
+      為什麼是用聲音？
+    </h3>
+    <p>因為有時候，你只是想要：不被看見、不被要求回應、不需要打開鏡頭，但也不想完全一個人。</p>
+    <p>聲音，剛好留下一個空間。</p>
+    <p class="moment-note">
+      ☀️ 適合的時刻：下班後、睡前、或你不想再滑手機的那 15 分鐘。
+    </p>
+  </section>
+
+  <!-- Who It's For Section -->
+  <section class="reveal">
+    <h3>
+      <span class="section-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </span>
+      特別適合你，如果你：
+    </h3>
+    <ul>
+      <li>想畫畫，但常常畫沒多久就停</li>
+      <li>想靜一下，卻很難真的靜下來</li>
+      <li>不想被教，也不想被分析</li>
+      <li>想要一小段「不用應付任何人」的時間</li>
+    </ul>
+    <div class="two-col">
+      <div class="soft-card is-focus">
+        <h4 class="title">你會得到什麼</h4>
+        <p class="desc">一段「被設計過的時間」：有人在場、給節奏、給停頓、給收尾，陪你把第一筆畫下去。</p>
+      </div>
+      <div class="soft-card">
+        <h4 class="title">不太適合你，如果你正在找</h4>
+        <p class="desc">需要被分析、被建議、或希望有人處理情緒困擾的服務。這種情況更建議直接找專業諮商資源。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Use Section -->
+  <section class="reveal">
+    <h3>
+      <span class="section-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+      </span>
+      使用方式
+    </h3>
+    <div class="usage-steps" role="list" aria-label="使用步驟">
+      <div class="step-item">
+        <div class="step-tag" role="listitem">
+          <span class="step-number">1</span>
+          戴上耳機
+        </div>
+      </div>
+      <span class="step-arrow" aria-hidden="true">→</span>
+      <div class="step-item">
+        <div class="step-tag" role="listitem">
+          <span class="step-number">2</span>
+          準備紙筆
+        </div>
+      </div>
+      <span class="step-arrow" aria-hidden="true">→</span>
+      <div class="step-item">
+        <div class="step-tag" role="listitem">
+          <span class="step-number">3</span>
+          按下播放
+        </div>
+      </div>
+      <span class="step-arrow" aria-hidden="true">→</span>
+      <div class="step-item">
+        <div class="step-tag" role="listitem">
+          <span class="step-number">4</span>
+          跟著聲音
+        </div>
+      </div>
+      <span class="step-arrow" aria-hidden="true">→</span>
+      <div class="step-item">
+        <div class="step-tag" role="listitem">
+          <span class="step-number">5</span>
+          畫到收尾
+        </div>
+      </div>
+    </div>
+    <div class="boundary-note">
+      建議：找一個你不會被打斷的角落；如果中途分心，也沒關係，照著聲音回來即可。
+    </div>
+  </section>
+
+  <!-- Preorder Note -->
+  <section class="preorder-note reveal" aria-label="預購說明">
+    <div class="preorder-badge">預購說明</div>
+    <div class="quote-box">
+      <p>這是一段正在製作中的陪伴式創作音檔。</p>
+      <p>完整音檔將在 <strong>2026/3/24</strong> 提供，完成後可不限次數播放。</p>
+    </div>
+    <div class="refund-guarantee">
+      <span class="refund-icon">🛡️</span>
+      <p class="refund-text">若未能如期完成，將全額原路退款。退款由付款平台直接處理。</p>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Section -->
+  <section class="cta-section reveal" aria-label="購買資訊">
+      <div class="price-wrapper" aria-label="價格">
+        <span class="price-currency">NT$</span>
+        <span class="price-label">299</span>
+      </div>
+      <a class="buy-button" href="https://portaly.cc/lifebuffer/product/TD0E28ZEcR68zPz4Zo2i" rel="noopener" target="_blank">
+        取得這段陪伴時間
+      </a>
+      <p class="microcopy">預計 3/24 提供下載連結（Email 寄送）</p>
+      <div class="trust-signals">
+        <span class="trust-item">一次購買</span>
+        <span class="trust-item">可重複播放</span>
+        <span class="trust-item">逾期全額退款</span>
+        <span class="trust-item">不需分享</span>
+      </div>
+
+  </section>
+
+  <!-- Final Quote -->
+  <div class="final-quote reveal">
+    你不需要準備好，只需要畫下第一筆。
+  </div>
+
+  <!-- Quiet Signup -->
+  <section class="quiet-signup reveal" id="waitlist">
+    <h2 class="quiet-title">如果你還沒準備好，也可以先留下信箱</h2>
+    <p class="quiet-desc">當這段陪伴再次開放時，我會通知你。</p>
+    <div class="quiet-action">
+      <a class="buy-button btn-secondary" href="https://forms.gle/3rw3J7wgoNXtrnJL8" rel="noopener" target="_blank">
+        留下 Email 接收通知
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-philosophy">
+      大家都說照顧自己很重要。只是現代的生活太快、太滿，<br/>
+      連「怎麼慢下來」，都變成一件需要被提醒的事。
+    </p>
+    <hr/>
+    <div class="footer-brand">LifeBuffer Space</div>
+    <p class="footer-sub">為忙碌的生活留下一個緩衝的空間</p>
+    <div class="contact-info">
+      <span class="copyright">© 2026 LifeBuffer Space</span>
+      <a aria-label="Email LifeBuffer Space" class="mail-icon" href="/cdn-cgi/l/email-protection#7a121f1616153a16131c1f180f1c1c1f0854090a1b191f">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+          <rect height="16" rx="2" width="20" x="2" y="4"></rect>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// ==========================================
+// Scroll Reveal — 滾動進場動畫
+// ==========================================
+(function() {
+  var els = document.querySelectorAll('.reveal, .reveal-children');
+  if (!('IntersectionObserver' in window)) {
+    // 不支援的瀏覽器直接顯示全部
+    els.forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+})();
+
+// ==========================================
+// Sticky Mobile CTA — 滑過 Hero 後出現
+// ==========================================
+(function() {
+  var sticky = document.getElementById('stickyCta');
+  var heroCta = document.querySelector('.hero-cta');
+  if (!sticky || !heroCta || !('IntersectionObserver' in window)) return;
+  var observer = new IntersectionObserver(function(entries) {
+    sticky.classList.toggle('show', !entries[0].isIntersecting);
+  }, { threshold: 0 });
+  observer.observe(heroCta);
+})();-e 
+</script>
 </body>
 </html>
